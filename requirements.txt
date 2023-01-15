@@ -28,8 +28,11 @@ realesrgan==0.3.0
 resize-right==0.0.2
 safetensors==0.2.7
 scikit-image==0.19.2
-tensorboard==2.11.0
-tensorflow==2.11.0
+# fallbacking tensorflow version into the latest version before 2.11
+tensorboard==2.10.1; sys_platform=="win32"
+tensorflow==2.10.1; sys_platform=="win32"
+tensorboard==2.11.0; sys_platform!="win32"
+tensorflow==2.11.0; sys_platform!="win32"
 timm==0.6.7
 torch
 torchdiffeq==0.2.3
